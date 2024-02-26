@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Animated,
   Platform,
+  StyleSheet,
 } from 'react-native';
 import React, { useEffect, useRef } from 'react';
 import Ionic from 'react-native-vector-icons/Ionicons';
@@ -48,7 +49,6 @@ const Status = ({route, navigation}) => {
       <View
         style={{
           marginTop: Platform.OS === 'ios' ? statusBarHeight : 0,
-
           height: 3,
           width: '100%',
           borderWidth: 1,
@@ -110,11 +110,11 @@ const Status = ({route, navigation}) => {
             />
           </TouchableOpacity>
         </View>
-        {/* <Image
+      </View>
+        <Image
           source={image}
           style={{position: 'absolute', width: '100%', height: 600}}
-        /> */}
-      </View>
+        />
       <View
         style={{
           position: 'absolute',
@@ -125,9 +125,11 @@ const Status = ({route, navigation}) => {
           justifyContent: 'space-between',
           marginVertical: 10,
           width: '100%',
-        }}></View>
+        }}/>
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create()
 
 export default Status;
